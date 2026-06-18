@@ -1,0 +1,31 @@
+{
+  "grammars": [
+    {
+      "name": "holyc",
+      "camelcase": "HolyC",
+      "scope": "source.hc",
+      "path": ".",
+      "file-types": ["hc", "HC"],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "HolyC grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "inauguration"
+      }
+    ]
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "node": false,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

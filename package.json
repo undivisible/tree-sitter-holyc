@@ -1,0 +1,14 @@
+{
+  "name": "tree-sitter-holyc",
+  "version": "0.1.0",
+  "description": "HolyC grammar for tree-sitter (TempleOS / inauguration)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.8"
+  }
+}

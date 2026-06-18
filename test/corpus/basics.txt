@@ -1,0 +1,71 @@
+==================
+hello world (hclang / holyc-lang)
+==================
+
+U0 Main()
+{
+  "Hello world\n";
+}
+Main;
+
+---
+
+(source_file
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list)
+    body: (compound_statement
+      (expression_statement
+        print: (print_expression
+          format: (string_literal)))))
+  (bare_call_statement
+    name: (identifier)))
+
+==================
+secularize sample (fn + print stmt)
+==================
+
+U0 test(I16 a, U8 b, F64 c) {
+  Print("hello");
+}
+
+F64 pest(I8 d) {
+  Print("nothing");
+}
+
+"%s %s", "hello", "world";
+
+---
+
+(source_file
+  (function_definition)
+  (function_definition)
+  (expression_statement
+    print: (print_expression
+      format: (string_literal)
+      argument: (string_literal)
+      argument: (string_literal))))
+
+==================
+printf-as-statement (TempleOS style)
+==================
+
+U0 Main()
+{
+  U8 *number = "12345";
+  auto num = ToInt(number);
+  "%ld\n",num;
+}
+
+---
+
+(source_file
+  (function_definition
+    body: (compound_statement
+      (declaration)
+      (declaration)
+      (expression_statement
+        print: (print_expression
+          format: (string_literal)
+          argument: (identifier))))))

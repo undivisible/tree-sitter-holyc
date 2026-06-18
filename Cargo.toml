@@ -1,0 +1,31 @@
+[package]
+name = "tree-sitter-holyc"
+version = "0.1.0"
+description = "HolyC grammar for tree-sitter (inauguration)"
+license = "MIT"
+edition = "2021"
+repository = "https://github.com/undivisible/tree-sitter-holyc"
+keywords = ["tree-sitter", "holyc", "grammar", "parser"]
+categories = ["parsing"]
+
+[lib]
+path = "lib.rs"
+
+include = [
+  "lib.rs",
+  "build.rs",
+  "grammar.js",
+  "src/*",
+  "queries/*",
+  "corpus/*",
+  "tree-sitter.json",
+]
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[dev-dependencies]
+tree-sitter = "0.26"
+
+[build-dependencies]
+cc = "1.0"
