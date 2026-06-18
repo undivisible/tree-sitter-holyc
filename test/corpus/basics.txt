@@ -39,8 +39,38 @@ F64 pest(I8 d) {
 ---
 
 (source_file
-  (function_definition)
-  (function_definition)
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier))
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier))
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier)))
+    body: (compound_statement
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (argument_list
+            (string_literal))))))
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier)))
+    body: (compound_statement
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (argument_list
+            (string_literal))))))
   (expression_statement
     print: (print_expression
       format: (string_literal)
@@ -53,8 +83,7 @@ printf-as-statement (TempleOS style)
 
 U0 Main()
 {
-  U8 *number = "12345";
-  auto num = ToInt(number);
+  auto num = 42;
   "%ld\n",num;
 }
 
@@ -62,9 +91,14 @@ U0 Main()
 
 (source_file
   (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list)
     body: (compound_statement
-      (declaration)
-      (declaration)
+      (declaration
+        type: (type_specifier)
+        name: (identifier)
+        value: (number_literal))
       (expression_statement
         print: (print_expression
           format: (string_literal)

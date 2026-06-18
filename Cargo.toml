@@ -1,6 +1,6 @@
 [package]
 name = "tree-sitter-holyc"
-version = "0.1.0"
+version = "0.0.1"
 description = "HolyC grammar for tree-sitter — TempleOS / Terry Davis dialect"
 license = "MIT"
 edition = "2021"

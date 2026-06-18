@@ -1,0 +1,251 @@
+==================
+while and if return (holyc-lang style)
+==================
+
+I32 Counter(I64 limit)
+{
+  I64 i = 0;
+  while (i < limit) {
+    i = i + 1;
+  }
+  if (i == limit) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+---
+
+(source_file
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier)))
+    body: (compound_statement
+      (declaration
+        type: (type_specifier)
+        name: (identifier)
+        value: (number_literal))
+      (while_statement
+        condition: (parenthesized_expression
+          (binary_expression
+            left: (identifier)
+            right: (identifier)))
+        body: (compound_statement
+          (expression_statement
+            (assignment_expression
+              left: (identifier)
+              right: (binary_expression
+                left: (identifier)
+                right: (number_literal))))))
+      (if_statement
+        condition: (parenthesized_expression
+          (binary_expression
+            left: (identifier)
+            right: (identifier)))
+        consequence: (compound_statement
+          (return_statement
+            value: (number_literal)))
+        alternative: (compound_statement
+          (return_statement
+            value: (number_literal)))))))
+
+==================
+for loop with print in body
+==================
+
+U0 LoopDemo()
+{
+  I64 j;
+  for (j = 0; j < 10; j = j + 1) {
+    "%d\n", j;
+  }
+}
+
+---
+
+(source_file
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list)
+    body: (compound_statement
+      (declaration
+        type: (type_specifier)
+        name: (identifier))
+      (for_statement
+        (expression_statement
+          (assignment_expression
+            left: (identifier)
+            right: (number_literal)))
+        (binary_expression
+          left: (identifier)
+          right: (number_literal))
+        (assignment_expression
+          left: (identifier)
+          right: (binary_expression
+            left: (identifier)
+            right: (number_literal)))
+        body: (compound_statement
+          (expression_statement
+            print: (print_expression
+              format: (string_literal)
+              argument: (identifier))))))))
+
+==================
+top-level decl and bare call
+==================
+
+I64 global_count = 0;
+
+U0 Bump()
+{
+  global_count = global_count + 1;
+}
+
+Bump;
+
+---
+
+(source_file
+  (declaration
+    (type_specifier)
+    (identifier)
+    (number_literal))
+  (function_definition
+    (type_specifier)
+    (identifier)
+    (parameter_list)
+    (compound_statement
+      (expression_statement
+        (assignment_expression
+          (identifier)
+          (binary_expression
+            (identifier)
+            (number_literal))))))
+  (bare_call_statement
+    (identifier)))
+
+==================
+function call and return expr
+==================
+
+I64 Add(I64 a, I64 b)
+{
+  return a + b;
+}
+
+---
+
+(source_file
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier))
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier)))
+    body: (compound_statement
+      (return_statement
+        value: (binary_expression
+          left: (identifier)
+          right: (identifier))))))
+
+==================
+Print() call inside function (secularize)
+==================
+
+U0 test(I16 a, U8 b, F64 c) {
+  Print("hello");
+}
+
+---
+
+(source_file
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier))
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier))
+      (parameter_declaration
+        (type_specifier)
+        name: (identifier)))
+    body: (compound_statement
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (argument_list
+            (string_literal)))))))
+
+==================
+comments and numeric literals
+==================
+
+// line comment
+U0 Nums()
+{
+  I64 hex = 0x2A;
+  I64 dec = 42;
+  F64 e = 1.5e2;
+}
+
+---
+
+(source_file
+  (comment)
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list)
+    body: (compound_statement
+      (declaration
+        type: (type_specifier)
+        name: (identifier)
+        value: (number_literal))
+      (declaration
+        type: (type_specifier)
+        name: (identifier)
+        value: (number_literal))
+      (declaration
+        type: (type_specifier)
+        name: (identifier)
+        value: (number_literal)))))
+
+==================
+break and continue
+==================
+
+U0 Flow()
+{
+  while (1) {
+    break;
+    continue;
+  }
+}
+
+---
+
+(source_file
+  (function_definition
+    type: (type_specifier)
+    name: (identifier)
+    parameters: (parameter_list)
+    body: (compound_statement
+      (while_statement
+        condition: (parenthesized_expression
+          (number_literal))
+        body: (compound_statement
+          (break_statement)
+          (continue_statement))))))

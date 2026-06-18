@@ -30,7 +30,7 @@ No published **tree-sitter-holyc** on GitHub/npm at time of writing; this repo i
 ## Rust crate (same layout as [tree-sitter-v](https://crates.io/crates/tree-sitter-v))
 
 ```toml
-tree-sitter-holyc = "0.1.0"
+tree-sitter-holyc = "0.0.1"
 ```
 
 ```rust
