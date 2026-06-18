@@ -27,10 +27,22 @@ No published **tree-sitter-holyc** on GitHub/npm at time of writing; this repo i
 
 **Not yet**: classes, `extern`, asm string statements, range-for, preprocessor, old-style param lists, full declarator grammar (`F64 *s` needs C-style declarators).
 
+## Rust crate (same layout as [tree-sitter-v](https://crates.io/crates/tree-sitter-v))
+
+```toml
+tree-sitter-holyc = "0.1.0"
+```
+
+```rust
+use tree_sitter_holyc::LANGUAGE;
+parser.set_language(&LANGUAGE.into())?;
+```
+
+Publish: `cargo publish` (from repo root, after `npx tree-sitter generate`).
+
 ## Develop
 
 ```bash
-cd grammars/tree-sitter-holyc
 npm install
 npx tree-sitter generate
 npx tree-sitter test    # needs a working C toolchain (Xcode CLT on macOS)
@@ -39,8 +51,6 @@ cargo test              # Rust binding smoke test (also needs cc)
 
 Corpus samples are derived from holyc-lang / hclang / secularize examples in `test/corpus/basics.txt`.
 
-## inauguration wiring (later)
+## inauguration
 
-1. `tree-sitter-holyc = { path = "../../tree-sitter-holyc" }` or crates.io once published in `in-cli/Cargo.toml`
-2. Add `ParserId::HolyC`, extension `hc` / `HC`, `tree_front::extract_holyc`
-3. Map `function_definition`, `print_expression`, `bare_call_statement` → `UnifiedModule`
+Wired in [inauguration](https://github.com/semitechnological/inauguration) `in-cli` via `tree-sitter-holyc` crate + `ParserId::HolyC` + `.hc` extension.

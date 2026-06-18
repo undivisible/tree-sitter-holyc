@@ -1,12 +1,13 @@
 [package]
 name = "tree-sitter-holyc"
 version = "0.1.0"
-description = "HolyC grammar for tree-sitter (inauguration)"
+description = "HolyC grammar for tree-sitter — TempleOS / Terry Davis dialect"
 license = "MIT"
 edition = "2021"
+readme = "README.md"
 repository = "https://github.com/undivisible/tree-sitter-holyc"
-keywords = ["tree-sitter", "holyc", "grammar", "parser"]
-categories = ["parsing"]
+keywords = ["tree-sitter", "holyc", "grammar", "parser", "templeos"]
+categories = ["parsing", "text-editors"]
 
 [lib]
 path = "lib.rs"
@@ -18,6 +19,7 @@ include = [
   "src/*",
   "queries/*",
   "corpus/*",
+  "test/*",
   "tree-sitter.json",
 ]
 
