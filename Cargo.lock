@@ -190,7 +190,7 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter-holyc"
-version = "0.0.1"
+version = "0.1.2"
 dependencies = [
  "cc",
  "tree-sitter",
