@@ -2,7 +2,7 @@
   "name": "tree-sitter-holyc",
   "version": "0.0.1",
   "description": "HolyC grammar for tree-sitter (TempleOS / inauguration)",
-  "license": "MIT",
+  "license": "ISC",
   "private": true,
   "scripts": {
     "generate": "tree-sitter generate",

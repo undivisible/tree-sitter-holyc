@@ -2,7 +2,7 @@
 name = "tree-sitter-holyc"
 version = "0.0.1"
 description = "HolyC grammar for tree-sitter — TempleOS / Terry Davis dialect"
-license = "MIT"
+license = "ISC"
 edition = "2021"
 readme = "README.md"
 repository = "https://github.com/undivisible/tree-sitter-holyc"
