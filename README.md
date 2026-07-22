@@ -47,4 +47,4 @@ Tests live in `test/corpus/`. Example sources in `test/fixtures/`.
 
 ## License
 
-MIT
+ISC
