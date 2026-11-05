@@ -1,0 +1,11 @@
+id = "holyc"
+name = "HolyC"
+version = "0.1.0"
+schema_version = 1
+authors = ["undivisible"]
+description = "HolyC language support"
+repository = "https://github.com/undivisible/tree-sitter-holyc"
+
+[grammars.holyc]
+repository = "https://github.com/undivisible/tree-sitter-holyc"
+commit = "b2504d6db11756526ef671d30417de8927569a39"

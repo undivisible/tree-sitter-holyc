@@ -1,0 +1,11 @@
+name = "HolyC"
+grammar = "holyc"
+path_suffixes = ["hc", "HC"]
+line_comments = ["// "]
+tab_size = 2
+brackets = [
+  { start = "{", end = "}", close = true, newline = true },
+  { start = "[", end = "]", close = true, newline = true },
+  { start = "(", end = ")", close = true, newline = true },
+  { start = '"', end = '"', close = true, newline = false, not_in = ["comment", "string"] },
+]
