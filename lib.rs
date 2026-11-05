@@ -24,4 +24,9 @@ mod tests {
             .set_language(&super::LANGUAGE.into())
             .expect("Error loading HolyC language");
     }
+
+    #[test]
+    fn highlight_query_loads() {
+        tree_sitter::Query::new(&super::LANGUAGE.into(), super::HIGHLIGHTS_QUERY).unwrap();
+    }
 }

@@ -8,20 +8,20 @@ readme = "README.md"
 repository = "https://github.com/undivisible/tree-sitter-holyc"
 keywords = ["tree-sitter", "holyc", "grammar", "parser", "templeos"]
 categories = ["parsing", "text-editors"]
-
-[lib]
-path = "lib.rs"
-
 include = [
   "lib.rs",
   "build.rs",
   "grammar.js",
-  "src/*",
+  "src/**",
   "queries/*",
-  "corpus/*",
-  "test/*",
+  "test/**",
   "tree-sitter.json",
+  "LICENSE",
+  "README.md",
 ]
+
+[lib]
+path = "lib.rs"
 
 [dependencies]
 tree-sitter-language = "0.1"
